@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 struct Node {
-    int data;
+    int data; //item
     struct Node *next;//linking address
 };
 struct Node *head, *middle, *last;//like a,b,c
