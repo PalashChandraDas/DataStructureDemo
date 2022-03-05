@@ -9,6 +9,7 @@ int main() {
     for(i = 0; i < size; i++) {
         printf("%d ", LA[i]); // this is linear array.
     }
+    
     printf("\n");
 
     return 0;
