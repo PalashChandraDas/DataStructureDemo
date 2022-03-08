@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h
 
 typedef struct Node node; //struct Node এর নতুন নামকরণ করা হয়েছে node। যেটা এখন সব জায়গায় node নামক datatype হিসেবে ব্যবহার করা যাবে।
 struct Node {
