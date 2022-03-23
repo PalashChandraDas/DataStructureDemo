@@ -25,16 +25,15 @@ int binary_search(int arr[], int size, int item) {
 
 int main() {
 
-    int size = 6;
     int arr[] = {1, 2, 5, 10, 55, 100};
+    int size = sizeof(arr) / sizeof(arr[0]); //declare array size
     int item = 10;
 
-    int result = binary_search(arr, size, item);// function_calling
+    int result = binary_search(arr, size, item);
 
-    if(result == -1){
+    if(result == -1) {
         printf("Not found.\n");
-    }
-    else{
+    } else {
         printf("Element is found at index: %d\n", result);
     }
 
