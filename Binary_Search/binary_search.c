@@ -2,20 +2,20 @@
 
 int binary_search(int arr[], int size, int item) {
 
-    int left, right, mid;
-    left = 0;
-    right = size-1;
+    int low, high, mid;
+    low = 0;
+    high = size-1;
 
-    while(left <= right) {
-        mid = (left+right)/2;
+    while(low <= high) {
+        mid = (low+high)/2;
 
         if(arr[mid] == item) {
             return mid;
         }
         if(arr[mid] < item) {
-            left = mid + 1;
+            low = mid + 1;
         } else {
-            right = mid - 1;
+            high = mid - 1;
         }
     }
 
@@ -26,7 +26,7 @@ int binary_search(int arr[], int size, int item) {
 int main() {
 
     int arr[] = {1, 2, 5, 10, 55, 100};
-    int size = sizeof(arr) / sizeof(arr[0]); //declare array size
+    int size = sizeof(arr) / sizeof(arr[0]); //array size
     int item = 10;
 
     int result = binary_search(arr, size, item);
