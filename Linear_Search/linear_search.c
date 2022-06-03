@@ -25,6 +25,6 @@ int linear_search(int arr[], int n, int x) {
     }
 
     i = -1;
-    return i; //index
+    return i; //out of array
 
 }
