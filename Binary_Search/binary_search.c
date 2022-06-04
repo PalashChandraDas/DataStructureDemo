@@ -1,35 +1,12 @@
-#include <stdio.h>
-
-int binary_search(int arr[], int size, int item) {
-
-    int low, high, mid;
-    low = 0;
-    high = size-1;
-
-    while(low <= high) {
-        mid = (low+high)/2;
-
-        if(arr[mid] == item) {
-            return mid;
-        }
-        if(arr[mid] < item) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    return -1; // -1 means not found
-
-}
+#include<stdio.h>
 
 int main() {
+    int arr[] = {2, 4, 5, 8, 11, 12, 14, 15, 16, 20};//ascending order sorted
+    int n = sizeof(arr)/sizeof(arr[0]); //length of array
+    int x = 11;//declaring searching value
 
-    int arr[] = {1, 2, 5, 10, 55, 100};
-    int size = sizeof(arr) / sizeof(arr[0]); //array size
-    int item = 10;
-
-    int result = binary_search(arr, size, item);
+    int result = binary_search(arr, n, x);//calling function
+    //printf("%d\n", result);
 
     if(result == -1) {
         printf("Not found.\n");
@@ -37,6 +14,29 @@ int main() {
         printf("Element is found at index: %d\n", result);
     }
 
-
     return 0;
+}
+
+
+int binary_search(int arr[], int n, int x) {
+
+    int left, right, mid;
+
+    left = 0; //first item
+    right = n-1; //last item
+
+    while(left <= right) {
+
+        mid = (left+right)/2;
+
+        if(arr[mid] == x) {
+            return mid;
+        }
+        if(arr[mid] < x) {
+            left = mid+1;
+        } else {
+            right = mid-1;
+        }
+    }
+    return -1;
 }
