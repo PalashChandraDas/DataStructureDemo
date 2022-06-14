@@ -27,10 +27,14 @@ void selection_sort(int arr[], int n) {
             arr[i] = arr[index_min];
             arr[index_min] = temp;
         }
+    }
 
-        printf("%d ", arr[i]); //printing sorted array
+    printf("\nSorted array ascending order:\n");
+    for(i = 0; i<n; i++) {
+        printf("%d ", arr[i]);
     }
 
     printf("\n");
 
 }
+
