@@ -23,7 +23,7 @@ void bubble_sort(int arr[], int n) {
         }
     }
 
-    printf("Sorted array ascending order:\n");
+    printf("\nSorted array ascending order:\n");
     for(i = 0; i<n; i++) {
         printf("%d ", arr[i]);
     }
