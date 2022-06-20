@@ -12,8 +12,8 @@ int main() {
 void bubble_sort(int arr[], int n) {
     int i, j, temp;
 
-    for(i = 0; i<n; i++) {
-        for(j = 0; j<n-i-1; j++) {
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < n-i-1; j++) {
             if(arr[j] > arr[j+1]) {
                 //swapping
                 temp = arr[j];
@@ -24,7 +24,7 @@ void bubble_sort(int arr[], int n) {
     }
 
     printf("\nSorted array ascending order:\n");
-    for(i = 0; i<n; i++) {
+    for(i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
 
