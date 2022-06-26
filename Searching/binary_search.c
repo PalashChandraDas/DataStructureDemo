@@ -27,7 +27,8 @@ int binary_search(int arr[], int n, int x) {
 
     while(left <= right) {
 
-        mid = (left+right)/2;
+        //mid = (left+right)/2;  //generally use it
+        mid = left+(right-left)/2; // To avoid integer overflow
 
         if(arr[mid] == x) {
             return mid;
