@@ -36,7 +36,7 @@ int main() {
 
     Stack my_stack; //name of array
     int item;
-    my_stack.top = 0; //initialize_index
+    my_stack.top = 0; //initialize top variable
 
     //calling function
     push(&my_stack, 1);
