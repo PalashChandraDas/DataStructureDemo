@@ -3,11 +3,11 @@
 
 int my_stack[STACK_MAX], top = -1;
 
-void push(int value) {  //PUSH: Add an element to the top of a stack.
+void push(int item) {  //PUSH: Add an element to the top of a stack.
 
     if(top < STACK_MAX){
-        printf("PUSH: %d\n", value);
-        my_stack[++top] = value;
+        printf("PUSH: %d\n", item);
+        my_stack[++top] = item;
     }
     else {
         printf("Stack is full!\n"); //Overflow
