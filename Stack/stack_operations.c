@@ -9,9 +9,9 @@ void push(int item) {  //PUSH: Add an element to the top of a stack.
         printf("PUSH: %d\n", item);
         my_stack[++top] = item;
     }
-    else {
+    else 
         printf("Stack is full!\n"); //Overflow
-    }
+    
 
 }
 
