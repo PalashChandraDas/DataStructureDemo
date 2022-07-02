@@ -5,7 +5,7 @@ int my_stack[STACK_MAX], top = -1;
 
 void push(int item) {  //PUSH: Add an element to the top of a stack.
 
-    if(top < STACK_MAX){
+    if(top < STACK_MAX - 1){
         printf("PUSH: %d\n", item);
         my_stack[++top] = item;
     }
