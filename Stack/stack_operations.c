@@ -20,7 +20,7 @@ void peek() {  //PEEK: Get the value of the top element without removing it.
     if(top < 0)
         printf("Stack is empty!\n"); //Underflow
     else
-        printf("%d\n", my_stack[top]);
+        printf("Top item from this stack: %d\n", my_stack[top]);
 }
 
 void pop() {  //POP: Remove an element from the top of a stack.
