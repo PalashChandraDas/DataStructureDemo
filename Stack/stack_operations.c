@@ -1,60 +1,69 @@
 #include<stdio.h>
-#define STACK_MAX 3
+#define STACK_MAX 5
 
-int my_stack[STACK_MAX], top = -1;
+int my_stack[STACK_MAX], top = -1; //Initializes the top index to -1
+
+//Checks if Stack is Full or not
+int isFull() {
+    if(top >= STACK_MAX-1) //it's true when top = 4 or up
+        return 1;
+    else
+        return 0;
+}
+
+//Checks if Stack is Empty or not
+int isEmpty() {
+    if(top == -1)
+        return 1;
+    else
+        return 0;
+}
 
 void push(int item) {  //PUSH: Add an element to the top of a stack.
-
-    if(top < STACK_MAX - 1){
+    if(isFull())
+        printf("Stack is full!\n"); //Overflow
+    else {
         printf("PUSH: %d\n", item);
         my_stack[++top] = item;
     }
-    else 
-        printf("Stack is full!\n"); //Overflow
-    
-
 }
 
-void peek() {  //PEEK: Get the value of the top element without removing it.
-
-    if(top < 0)
+int peek(){  //PEEK: Get the item of the top element without removing it.
+    if(isEmpty())
         printf("Stack is empty!\n"); //Underflow
     else
-        printf("Top item of this stack: %d\n", my_stack[top]);
+        return my_stack[top];
 }
 
-void pop() {  //POP: Remove an element from the top of a stack.
-    if(top < 0)
+void pop() {  //POP: Remove an item from the top of a stack.
+    if(isEmpty())
         printf("Stack is empty!\n"); //Underflow
     else {
-        printf("Popped %d, from Stack.\n", my_stack[top]);
+        printf("Popped %d, from this stack.\n", my_stack[top]);
         top--;
     }
-
 }
 
-void display_stack() {
+void display_stack(){
     printf("\nPrint the full stack from Top to Bottom:\n");
-    for(int i = top; i >= 0; i--)
-         printf("%d\n",my_stack[i]);
-
+    for(int i = top; i >= 0; i--){
+        printf("%d\n", my_stack[i]);
+    }
 }
 
 
 int main() {
 
-    push(8);
-    push(60);
-    push(19);
+    push(20);
+    push(10);
+    push(5);
+    push(3);
+    push(2);
+    push(22);
 
-    display_stack();
-
+    printf("\nTop item of this stack: %d\n", peek());
     pop();
-
     display_stack();
-
-    peek();
-
 
     return 0;
 }
