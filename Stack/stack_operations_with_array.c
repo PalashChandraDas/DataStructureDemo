@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define STACK_MAX 5
 
-int my_stack[STACK_MAX], top = -1; //Initializes the top index to -1
+int my_stack[STACK_MAX], top = -1; //Initializes the top index to -1, that means firstly stack is empty.
 
 //Checks if Stack is Full or not
 int isFull() {
