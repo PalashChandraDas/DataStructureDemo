@@ -5,7 +5,7 @@ int my_stack[STACK_MAX], top = -1; //Initializes the top index to -1
 
 //Checks if Stack is Full or not
 int isFull() {
-    if(top >= STACK_MAX-1) //it's true when top = 4 or up
+    if(top >= STACK_MAX - 1) //it's true when top = 4 or up
         return 1;
     else
         return 0;
