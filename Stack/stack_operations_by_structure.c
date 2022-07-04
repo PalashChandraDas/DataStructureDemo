@@ -1,7 +1,6 @@
 #include<stdio.h>
 #define STACK_MAX 5
 
-//Structure defining Stack data structure
 struct Stack {
     int top;
     int arr[STACK_MAX];
@@ -32,8 +31,9 @@ void push(int item) {
     if (isFull())
         printf("Stack is Full...\n");
     else {
+        st.arr[st.top+1] = item;
         printf("PUSH: %d\n", item);
-        st.arr[++st.top] = item;
+        st.top++; //last value store = 4
     }
 }
 
@@ -41,15 +41,15 @@ int peek() {
     if(isEmpty())
         printf("Stack is empty!!\n");
     else
-        return st.arr[st.top];
+        return st.arr[st.top]; //last index = 4
 }
 
 void pop() {
     if(isEmpty())
         printf("Stack is empty!!\n");
     else {
-        printf("Popped %d, from this stack.\n", st.arr[st.top]);
-        st.top--;
+        printf("Popped %d, from this stack.\n", st.arr[st.top]); // last index = 4
+        st.top--; //last value store = 3
     }
 }
 
@@ -75,7 +75,6 @@ int main() {
     printf("\nTop item of this stack: %d\n", peek());
     pop();
     display_stack();
-
 
     return 0;
 }
