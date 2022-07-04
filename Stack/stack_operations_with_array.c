@@ -23,8 +23,9 @@ void push(int item) {  //PUSH: Add an element to the top of a stack.
     if(isFull())
         printf("Stack is full!\n"); //Overflow
     else {
+        my_stack[top+1] = item;
         printf("PUSH: %d\n", item);
-        my_stack[++top] = item;
+        top++; //last value store = 4
     }
 }
 
@@ -32,7 +33,7 @@ int peek(){  //PEEK: Get the item of the top element without removing it.
     if(isEmpty())
         printf("Stack is empty!\n"); //Underflow
     else
-        return my_stack[top];
+        return my_stack[top]; //last index = 4
 }
 
 void pop() {  //POP: Remove an item from the top of a stack.
@@ -40,7 +41,7 @@ void pop() {  //POP: Remove an item from the top of a stack.
         printf("Stack is empty!\n"); //Underflow
     else {
         printf("Popped %d, from this stack.\n", my_stack[top]);
-        top--;
+        top--; //last value store = 3
     }
 }
 
