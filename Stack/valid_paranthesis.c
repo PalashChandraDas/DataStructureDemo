@@ -25,7 +25,7 @@ int isEmpty() {
         return 0;
 }
 
-void push(int item) {
+void push(char item) {
     if(isFull())
         printf("Stack is full...\n");
     else {
@@ -34,12 +34,11 @@ void push(int item) {
     }
 }
 
-int pop() {
+void pop() {
     if(isEmpty())
         printf("Stack is empty!\n");
     else {
         st.top--;
-        return st.arr[st.top+1];
     }
 }
 
