@@ -45,7 +45,7 @@ void pop() {
 
 int main() {
 
-    char input[100];
+    char input[STACK_MAX];
     int i, length;
     initialize();
 
