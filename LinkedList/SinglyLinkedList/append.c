@@ -1,5 +1,5 @@
 #include<stdio.h>
-typedef struct node Node;
+typedef struct node Node; //struct node = Node
 struct node {
     int data; //data part
     Node *next; //address part
@@ -7,7 +7,7 @@ struct node {
 
 //create a node
 Node *create_node(int item, Node *next) {
-    Node *new_node = (Node *)malloc(sizeof(Node));
+    Node *new_node = (Node *)malloc(sizeof(Node)); //memory allocate here
     if(new_node == NULL) {
         printf("Error! Couldn't create a new node.\n");
         exit(1);
@@ -30,7 +30,7 @@ Node *append(Node *head, int item) {
     return head;
 }
 
-//traversing node here
+//traversing linked list here
 void print_linked_list(Node *head) {
     Node *current_node = head;
     while(current_node != NULL) {
