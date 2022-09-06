@@ -13,7 +13,7 @@ Node *create_node(int item, Node *next) {
         exit(1);
     }
     new_node->data = item; //initialize data
-    new_node->next = next; //initialize address
+    new_node->next = next; //initialize address of the next node
 }
 
 //insert a node at the end
