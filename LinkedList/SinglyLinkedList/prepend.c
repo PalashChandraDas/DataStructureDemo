@@ -38,6 +38,7 @@ int main() {
     head = n; //store first_node address here
     head = prepend(head, 12); // a new_node insert at the beginning
 
+    printf("Linked List: ");
     print_linked_list(head);
 
     return 0;
