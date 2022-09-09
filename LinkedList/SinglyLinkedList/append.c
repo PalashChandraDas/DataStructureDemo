@@ -47,6 +47,8 @@ int main() {
     head = append(head, 20); //2nd node
     head = append(head, 25); //3rd node
     head = append(head, 30); //4th node
+    
+    printf("Linked List: ");
     print_linked_list(head);
 
     return 0;
