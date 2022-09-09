@@ -14,7 +14,7 @@ int main() {
             scanf("%d", &arr[i]);
         }
 
-        printf("Please enter the searching item: ");
+        printf("Please enter the item to search: ");
         scanf("%d", &item);
 
         int result = linear_search(arr, size, item);
