@@ -44,10 +44,14 @@ void createNodeList(int n) {
 //display list
 void print_linked_list() {
     Node *current_node;
-    current_node = st_node;
-    while(current_node != NULL) {
-        printf("Data = %d\n", current_node->data); //print the data of current node
-        current_node = current_node->next; //advances the position of current node
+    if(st_node == NULL) {
+        printf("No data found in the empty list.\n");
+    } else {
+        current_node = st_node;
+        while(current_node != NULL) {
+            printf("Data = %d\n", current_node->data); // prints the data of current node
+            current_node = current_node->next; // advances the position of current node
+        }
     }
 }
 
