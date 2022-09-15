@@ -56,6 +56,7 @@ int main() {
     printf("Enter the number of nodes: ");
     scanf("%d", &n);
     createNodeList(n);
+    
     printf("\nLinked list are:\n");
     print_linked_list();
 
