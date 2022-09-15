@@ -40,7 +40,7 @@ void createNodeList(int n) {
     }
 }
 
-//insert a new node at the beginning of a Singly Linked List
+//insert a new node at the beginning of Linked List
 void prepend(int num) {
     Node *fn_node;
     fn_node = (Node *)malloc(sizeof(Node)); //memory allocate for new node
@@ -57,10 +57,14 @@ void prepend(int num) {
 //display list
 void print_linked_list() {
     Node *current_node;
-    current_node = st_node;
-    while(current_node != NULL) {
-        printf("Data = %d\n", current_node->data); //print the data of current node
-        current_node = current_node->next; //advances the position of current node
+    if(st_node == NULL) {
+        printf("No data found in the empty list.\n");
+    } else {
+        current_node = st_node;
+        while(current_node != NULL) {
+            printf("Data = %d\n", current_node->data); // prints the data of current node
+            current_node = current_node->next; // advances the position of current node
+        }
     }
 }
 
