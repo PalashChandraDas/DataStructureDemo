@@ -7,7 +7,7 @@ struct node {
 
 //create node
 void createNodeList(int n) {
-    Node *current_node, *fn_node;
+    Node *current_node, *fn_node; //fn = field node
     int num, i;
     st_node = (Node *)malloc(sizeof(Node)); //memory allocate for first node
 
