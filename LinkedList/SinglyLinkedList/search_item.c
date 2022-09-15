@@ -1,37 +1,52 @@
 #include<stdio.h>
-typedef struct node Node;
+typedef struct node Node; //struct node = Node
 struct node {
-    int data;
-    Node *next;
-};
+    int data; //data part of node
+    Node *next; //address part of node
+} *head; //name of the structure type variable
 
-Node *create_node(int item, Node *next) {
-    Node *new_node = (Node *)malloc(sizeof(Node));
-    if(new_node == NULL) {
-        printf("Error! Couldn't create a new Node.\n");
+//create node
+void createNodeList(int n) {
+    Node *current_node, *new_node;
+    int num, i;
+    head = (Node *)malloc(sizeof(Node)); //memory allocate for first node
+
+    if(head == NULL) {
+        printf("Error! Couldn't create a new node.\n");
         exit(1);
+    } else {
+        printf("Input the data of node 1: ");
+        scanf("%d", &num);
+        head->data = num;
+        head->next = NULL;
+        current_node = head; //pass the address of first node in current_node
+
+        //create 2nd to n node
+        for(i = 2; i <= n; i++) {
+            int num;
+            new_node = (Node *)malloc(sizeof(Node)); //memory allocate for next node
+            if(new_node == NULL) {
+                printf("Error! Couldn't create a node.\n");
+                break;
+            } else {
+                printf("Enter the data of node %d: ", i);
+                scanf("%d", &num);
+                new_node->data = num;
+                new_node->next = NULL;
+                current_node->next = new_node; //links previous node
+                current_node = current_node->next;
+            }
+        }
     }
-    new_node->data = item;
-    new_node->next = next;
-    return new_node;
 }
 
-Node *append(Node *head, int item) {
-    Node *new_node = create_node(item, NULL);
-    Node *current_node = head;
-    while(current_node->next != NULL) {
-        current_node = current_node->next;
-    }
-    current_node->next = new_node;
-    return head;
-}
-
-int search(Node *head, int item) {
-    Node *current_node = head;
+//search an item from Linked List
+int search(int num) {
     int index = 0;
-    // traverse till then end of the linked list
+    Node *current_node;
+    current_node = head;
     while(current_node != NULL) {
-        if(current_node->data == item) {
+        if(current_node->data == num) {
             return index;
         }
         current_node = current_node->next;
@@ -41,27 +56,20 @@ int search(Node *head, int item) {
 }
 
 int main() {
-    Node *head, *n;
-    int item;
+    int n, num, result;
+    printf("Enter the number of nodes: ");
+    scanf("%d", &n);
+    createNodeList(n);
 
-    n = create_node(11, NULL);
-    head = n;
-    head = append(head, 5);
-    head = append(head, 53);
-    head = append(head, 50);
-    head = append(head, 66);
-    head = append(head, 9);
-    head = append(head, 10);
-    head = append(head, 88);
-
-    printf("Enter element to search: ");
-    scanf("%d", &item);
-    int result = search(head, item);//function calling here.
+    printf("\nInput data to search: ");
+    scanf("%d", &num);
+    result = search(num);
 
     if(result == -1) {
-        printf("Item not found!\n");
+        printf("Data not found.\n");
     } else {
-        printf("\nFound.\nThe position of item is: %d\n", result+1);
+        printf("Data found at node %d\n", result+1);
     }
+
     return 0;
 }
