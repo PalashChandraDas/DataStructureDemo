@@ -1,55 +1,79 @@
 #include<stdio.h>
 typedef struct node Node; //struct node = Node
 struct node {
-    int data; //data part
-    Node *next; //address part
-};
+    int data; //node of data part
+    Node *next; //node of address part
+} *st_node; //declare the name of structure type variable
 
-//create a node
-Node *create_node(int item, Node *next) {
-    Node *new_node = (Node *)malloc(sizeof(Node)); //memory allocate here
-    if(new_node == NULL) {
+//create node
+void createNodeList(int n) {
+    Node *current_node, *fn_node;
+    int num, i;
+    st_node = (Node *)malloc(sizeof(Node));
+    if(st_node == NULL) {
         printf("Error! Couldn't create a new node.\n");
         exit(1);
+    } else {
+        printf("Input data for node 1: ");
+        scanf("%d", &num);
+        st_node->data = num;
+        st_node->next = NULL;
+        current_node = st_node;
+
+        for(i = 2; i <= n; i++) {
+            fn_node = (Node *)malloc(sizeof(Node));
+            if(fn_node == NULL) {
+                printf("Error! Couldn't create a node.\n");
+                break;
+            } else {
+                printf("Input data for node %d: ", i);
+                scanf("%d", &num);
+                fn_node->data = num;
+                fn_node->next = NULL;
+                current_node->next = fn_node;
+                current_node = current_node->next;
+            }
+        }
     }
-    new_node->data = item; //initialize data
-    new_node->next = next; //initialize address of the next node
 }
 
-//insert a node at the end
-Node *append(Node *head, int item) {
-    Node *new_node = create_node(item, NULL); //memory allocate here
-    if(head == NULL) { //checking head is empty?
-        return new_node;
-    }
-    Node *current_node = head;
-    while(current_node->next != NULL) {
-        current_node = current_node->next;
-    }
-    current_node->next = new_node; //store new_node of address here
-    return head;
-}
-
-//count node
-void count(Node *head) {
-    Node *current_node = head;
+//Node count
+int node_count() {
     int counter = 0;
+    Node *current_node;
+    current_node = st_node;
+
     while(current_node != NULL) {
-        counter++;
-        current_node = current_node->next;
+        counter++; //counting node here
+        current_node = current_node->next; //advances the position of current_node
     }
-    printf("Total Node = %d\n", counter);
+    return counter;
+}
+
+//display list
+void print_linked_list() {
+    Node *current_node;
+
+    if(st_node == NULL) {
+        printf("No data found in the linked List.\n");
+    } else {
+        current_node = st_node;
+        while(current_node != NULL) {
+            printf("Data = %d\n", current_node->data); //prints the data of current node
+            current_node = current_node->next;  //advances the position of current node
+        }
+    }
 }
 
 int main() {
-    Node *head, *n;
-    n = create_node(20, NULL);
-    head = n;
-    head = append(head, 9);
-    head = append(head, 7);
-    head = append(head, 5);
+    int n, totalNode;
+    printf("Input the number of nodes: ");
+    scanf("%d", &n);
 
-    count(head);
-
+    createNodeList(n);
+    printf("\nData entered in the list are :\n");
+    print_linked_list();
+    totalNode = node_count();
+    printf("\nTotal number of nodes = %d\n", totalNode);
     return 0;
 }
