@@ -3,34 +3,34 @@ typedef struct node Node; //struct node = Node
 struct node {
     int data; //node of data part
     Node *next; //node of address part
-} *st_node; //declare the name of structure type variable
+} *head; //declare the name of structure type variable
 
 //create node
 void createNodeList(int n) {
-    Node *current_node, *fn_node;
+    Node *current_node, *new_node;
     int num, i;
-    st_node = (Node *)malloc(sizeof(Node));
-    if(st_node == NULL) {
+    head = (Node *)malloc(sizeof(Node));
+    if(head == NULL) {
         printf("Error! Couldn't create a new node.\n");
         exit(1);
     } else {
         printf("Input data for node 1: ");
         scanf("%d", &num);
-        st_node->data = num;
-        st_node->next = NULL;
-        current_node = st_node;
+        head->data = num;
+        head->next = NULL;
+        current_node = head;
 
         for(i = 2; i <= n; i++) {
-            fn_node = (Node *)malloc(sizeof(Node));
-            if(fn_node == NULL) {
+            new_node = (Node *)malloc(sizeof(Node));
+            if(new_node == NULL) {
                 printf("Error! Couldn't create a node.\n");
                 break;
             } else {
                 printf("Input data for node %d: ", i);
                 scanf("%d", &num);
-                fn_node->data = num;
-                fn_node->next = NULL;
-                current_node->next = fn_node;
+                new_node->data = num;
+                new_node->next = NULL;
+                current_node->next = new_node;
                 current_node = current_node->next;
             }
         }
@@ -41,7 +41,7 @@ void createNodeList(int n) {
 int node_count() {
     int counter = 0;
     Node *current_node;
-    current_node = st_node;
+    current_node = head;
 
     while(current_node != NULL) {
         counter++; //counting node here
@@ -54,10 +54,10 @@ int node_count() {
 void print_linked_list() {
     Node *current_node;
 
-    if(st_node == NULL) {
+    if(head == NULL) {
         printf("No data found in the linked List.\n");
     } else {
-        current_node = st_node;
+        current_node = head;
         while(current_node != NULL) {
             printf("Data = %d\n", current_node->data); //prints the data of current node
             current_node = current_node->next;  //advances the position of current node
