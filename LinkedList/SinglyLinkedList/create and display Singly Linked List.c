@@ -12,8 +12,7 @@ void createNodeList(int n) {
     head = (Node *)malloc(sizeof(Node)); //memory allocate for first node
 
     if(head == NULL) {
-        printf("Error! Couldn't create a new node.\n");
-        exit(1);
+        printf("Error! Couldn't create a new node.\n");        
     } else {
         printf("Input the data of node 1: ");
         scanf("%d", &num);
