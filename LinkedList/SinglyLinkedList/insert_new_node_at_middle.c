@@ -12,7 +12,6 @@ void createNodeList(int n) {
     head = (Node*) malloc(sizeof(Node));
     if(head == NULL) {
         printf("Error! Couldn't create a new Node.\n");
-        exit(1);
     } else {
         printf("Input data for node 1: ");
         scanf("%d", &num);
@@ -45,7 +44,6 @@ void insertNodeAtMiddle(int num, int pos) {
     new_node = (Node *)malloc(sizeof(Node)); //12598 (These comments are showing for imaginary)
     if(new_node == NULL) {
         printf("Error! Couldn't create a new node.\n");
-        exit(1);
     } else {
         current_node = head; //1000
         new_node->data = num;
@@ -56,7 +54,7 @@ void insertNodeAtMiddle(int num, int pos) {
             current_node = current_node->next; //2000
             pos--; //1
         }
-        new_node->next = current_node->next; //2000
+        new_node->next = current_node->next; //3000
         current_node->next = new_node; //12598
     }
 
