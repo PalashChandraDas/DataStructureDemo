@@ -12,8 +12,7 @@ void createNodeList(int n) {
     head = (Node *)malloc(sizeof(Node)); //memory allocate for first node
 
     if(head == NULL) {
-        printf("Error! Couldn't create a new node.\n");
-        exit(1);
+        printf("Error! Couldn't create a new node.\n");        
     } else {
         printf("Input the data of node 1: ");
         scanf("%d", &num);
@@ -46,8 +45,7 @@ void append(int num) {
     new_node = (Node *)malloc(sizeof(Node)); //memory allocate for new node
 
     if(new_node == NULL) {
-        printf("Error! Couldn't create a new node. Because, memory can not be allocated.\n");
-        exit(1);
+        printf("Error! Couldn't create a new node. Because, memory can not be allocated.\n");       
     } else {
         current_node = head;
         while(current_node->next != NULL) {
