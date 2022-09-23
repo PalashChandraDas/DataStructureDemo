@@ -42,8 +42,8 @@ void createNodeList(int n) {
 //insert a new node at the end of Linked List
 void append(int num) {
     Node *current_node, *new_node;
-    new_node = (Node *)malloc(sizeof(Node)); //memory allocate for new node
-
+    
+    //new_node = (Node *)malloc(sizeof(Node)); //memory allocate for new node
     if(new_node == NULL) {
         printf("Error! Couldn't create a new node. Because, memory can not be allocated.\n");       
     } else {
