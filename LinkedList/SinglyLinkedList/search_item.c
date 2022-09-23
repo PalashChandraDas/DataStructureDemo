@@ -13,7 +13,6 @@ void createNodeList(int n) {
 
     if(head == NULL) {
         printf("Error! Couldn't create a new node.\n");
-        exit(1);
     } else {
         printf("Input the data of node 1: ");
         scanf("%d", &num);
