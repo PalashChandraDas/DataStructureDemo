@@ -45,8 +45,7 @@ void prepend(int num) {
     Node *new_node;
     new_node = (Node *)malloc(sizeof(Node)); //memory allocate for new node
     if(new_node == NULL) {
-        printf("Error! Couldn't create a new node. Because, memory can not be allocated.\n");
-        exit(1);
+        printf("Error! Couldn't create a new node. Because, memory can not be allocated.\n");        
     } else {
         new_node->data = num; //Links the data part
         new_node->next = head; //Links the address part
