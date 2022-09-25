@@ -9,8 +9,8 @@ struct node {
 void createNodeList(int n) {
     Node *current_node, *new_node;
     int num, i;
+    
     head = (Node *)malloc(sizeof(Node)); //memory allocate for first node
-
     if(head == NULL) {
         printf("Error! Couldn't create a new node.\n");
     }
