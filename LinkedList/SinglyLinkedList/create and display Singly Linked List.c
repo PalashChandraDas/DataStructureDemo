@@ -22,7 +22,6 @@ void createNodeList(int n) {
 
         //create 2nd to n node
         for(i = 2; i <= n; i++) {
-            int num;
             new_node = (Node *)malloc(sizeof(Node)); //memory allocate for next node
             if(new_node == NULL) {
                 printf("Error! Couldn't create a node.\n");
